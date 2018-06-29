@@ -1,0 +1,15 @@
+change the dimension of output y-----> 1X3X57
+
+i.e for each sentennce the next char size will 3 
+
+
+incoporate corresponding changes in the Model
+
+
+Study the intension behind each operation 
+
+
+
+
+29-06-2018 :
+The text completion method() is buggy need to fix it 

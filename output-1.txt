@@ -1,0 +1,38 @@
+<class 'str'>
+600894
+['\n', ' ', '!', '"', "'", '(', ')', ',', '-', '.', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '=', '?', '[', ']', '_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ä', 'æ', 'é', 'ë'] 57
+num training examples 200295
+Input(X) shape (200295, 11, 57)
+Output(Y) shape (200295, 57)
+Train on 190280 samples, validate on 10015 samples
+Epoch 1/10
+2018-06-16 11:51:25.919401: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+190280/190280 [==============================] - 140s 734us/step - loss: 2.8972 - acc: 0.1933 - val_loss: 2.7715 - val_acc: 0.2603
+Epoch 2/10
+190280/190280 [==============================] - 138s 724us/step - loss: 2.6461 - acc: 0.2615 - val_loss: 2.5432 - val_acc: 0.3002
+Epoch 3/10
+190280/190280 [==============================] - 135s 707us/step - loss: 2.5338 - acc: 0.2867 - val_loss: 2.5203 - val_acc: 0.2906
+Epoch 4/10
+190280/190280 [==============================] - 135s 712us/step - loss: 2.4856 - acc: 0.2990 - val_loss: 2.5660 - val_acc: 0.2864
+Epoch 5/10
+190280/190280 [==============================] - 137s 718us/step - loss: 2.4484 - acc: 0.3078 - val_loss: 2.4468 - val_acc: 0.3030
+Epoch 6/10
+190280/190280 [==============================] - 144s 756us/step - loss: 2.4212 - acc: 0.3159 - val_loss: 2.4207 - val_acc: 0.3060
+Epoch 7/10
+190280/190280 [==============================] - 144s 759us/step - loss: 2.3911 - acc: 0.3247 - val_loss: 2.4555 - val_acc: 0.2768
+Epoch 8/10
+190280/190280 [==============================] - 139s 730us/step - loss: 2.3684 - acc: 0.3308 - val_loss: 2.4880 - val_acc: 0.3134
+Epoch 9/10
+190280/190280 [==============================] - 137s 721us/step - loss: 2.3484 - acc: 0.3351 - val_loss: 2.5396 - val_acc: 0.2920
+Epoch 10/10
+190280/190280 [==============================] - 137s 721us/step - loss: 2.3327 - acc: 0.3403 - val_loss: 2.2621 - val_acc: 0.3525
+it is not a lack of love, but a lack of 
+Traceback (most recent call last):
+  File "predictive-text.py", line 170, in <module>
+    print(predict_completions(seq, 5))
+  File "predictive-text.py", line 148, in predict_completions
+    x = prepare_input(text)
+  File "predictive-text.py", line 115, in prepare_input
+    x[0, t, char_indices[char]] = 1.
+IndexError: index 11 is out of bounds for axis 1 with size 11
+
