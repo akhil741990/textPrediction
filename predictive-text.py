@@ -50,9 +50,9 @@ sentences = []
 next_chars = []
 i = 0 
 while i < (len(text) - SEQUENCE_LENGTH):
-    if(text[i + SEQUENCE_LENGTH] !=' ' and text[i + SEQUENCE_LENGTH] !='\n' and text[i + SEQUENCE_LENGTH] !='.'):
-        sentences.append(text[i: i + SEQUENCE_LENGTH])
-        next_chars.append(text[i + SEQUENCE_LENGTH])
+#    if(text[i + SEQUENCE_LENGTH] !=' ' and text[i + SEQUENCE_LENGTH] !='\n' and text[i + SEQUENCE_LENGTH] !='.'):
+    sentences.append(text[i: i + SEQUENCE_LENGTH])
+    next_chars.append(text[i + SEQUENCE_LENGTH])
 #        print(text[i: i + SEQUENCE_LENGTH],'--->',text[i + SEQUENCE_LENGTH])
     i = i + step 
 print('num training examples:',len(sentences))
@@ -97,10 +97,10 @@ model.add(Activation('softmax'))
 
 optimizer = RMSprop(lr=0.01)
 model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
-#history = model.fit(X, y, validation_split=0.05, batch_size=128, epochs=20, shuffle=True).history
+history = model.fit(X, y, validation_split=0.05, batch_size=128, epochs=20, shuffle=True).history
 
-#model.save('keras_model.h5')
-#pickle.dump(history, open("history.p", "wb"))
+model.save('keras_model.h5')
+pickle.dump(history, open("history.p", "wb"))
 
 model = load_model('keras_model.h5')
 history = pickle.load(open("history.p", "rb"))
